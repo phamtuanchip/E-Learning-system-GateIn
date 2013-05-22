@@ -21,6 +21,7 @@ Dự án khởi động ngày 20/5/2013. Cập nhật trang wiki và tải mã n
 về dự án xin gửi về email: khanhthinh.45a4@gmail.com
 
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
+
 ------------------------------------------------------------------------------------------------------------------------
 
 English version:
