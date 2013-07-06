@@ -21,7 +21,8 @@ Dự án khởi động ngày 20/5/2013. Cập nhật trang wiki và tải mã n
 về dự án xin gửi về email: khanhthinh.45a4@gmail.com
 
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
-
+Cập nhật ngày 7/7/2013: Dự án chính thức bước vào SPRINT 1. Chi tiết gửi email theo địa chỉ mhst1304@googlegroups.com
+hoặc tìm hiểu nội dung meeting trên wiki.
 ------------------------------------------------------------------------------------------------------------------------
 
 English version:
@@ -45,5 +46,7 @@ Projects started from 20/5/2013. Update wiki and download source code for detail
 free to contact email: khanhthinh.45a4@gmail.com
 
 Updated 22/5/2013: Project in analysis and design phase.
+Updated 7/7/2013: Project in SPRINT 1, for more detail send an email to mhst1304@googlegroups.com. 
+English version for wiki is not available at this time. 
 
 
