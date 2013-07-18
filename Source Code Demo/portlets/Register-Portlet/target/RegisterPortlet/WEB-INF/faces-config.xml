@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Copyright (C) 2010 Red Hat, Inc. All rights reserved
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+    @author Nabil Benothman
+-->
+
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+    <!-- Navigation rules -->
+ 
+    <navigation-rule>
+        <from-view-id>/faces/viewContent.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/faces/error.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/faces/cancel.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/faces/success.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/faces/*</from-view-id>
+        <navigation-case>
+            <from-outcome>view</from-outcome>
+            <to-view-id>/faces/viewContent.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <!-- Managed Beans declarations -->
+    <managed-bean>
+        <managed-bean-name>resource</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.ResourceBean</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>registerBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.RegisterBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>mediaBean</property-name>
+            <value>#{mediaBean}</value>
+        </managed-property>
+        <managed-property>
+            <property-name>appBean</property-name>
+            <value>#{appBean}</value>
+        </managed-property>
+        <managed-property>
+            <property-name>statusBean</property-name>
+            <value>#{statusBean}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>calendarBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.CalendarBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>passwordValidationBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.PasswordValidationBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>registerBean</property-name>
+            <value>#{registerBean}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>captchaValidatorBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.CaptchaValidatorBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>mediaBean</property-name>
+            <value>#{mediaBean}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>emailValidatorBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.EmailValidatorBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>userNameValidatorBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.UserNameValidatorBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>zipCodeValidatorBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.ZipCodeValidatorBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>inputTextValidatorBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.validator.InputTextValidatorBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>appBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.ApplicationBean</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>mediaBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.MediaBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>statusBean</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.StatusBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>mediaData</managed-bean-name>
+        <managed-bean-class>org.jboss.gatein.bean.MediaData</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <!-- Custom validators -->
+    <validator>
+        <validator-id>inputTextValidator</validator-id>
+        <validator-class>org.jboss.gatein.jsf.validator.GateInInputTextValidator</validator-class>
+    </validator>
+    <validator>
+        <validator-id>userNameValidator</validator-id>
+        <validator-class>org.jboss.gatein.jsf.validator.UserNameValidator</validator-class>
+    </validator>
+    <validator>
+        <validator-id>emailValidator</validator-id>
+        <validator-class>org.jboss.gatein.jsf.validator.EmailValidator</validator-class>
+    </validator>
+    <validator>
+        <validator-id>zipCodeValidator</validator-id>
+        <validator-class>org.jboss.gatein.jsf.validator.ZipCodeValidator</validator-class>
+    </validator>
+
+    <!-- Custom components -->
+    <component>
+        <component-type>org.jboss.gatein.jsf.html.GateInHtmlInputText</component-type>
+        <component-class>org.jboss.gatein.jsf.html.GateInHtmlInputText</component-class>
+    </component>
+    <component>
+        <component-type>org.jboss.gatein.jsf.html.GateInBubbleHtmlInputSecret</component-type>
+        <component-class>org.jboss.gatein.jsf.html.GateInBubbleHtmlInputSecret</component-class>
+    </component>
+    <component>
+        <component-type>org.jboss.gatein.jsf.html.GateInBubbleHtmlInputText</component-type>
+        <component-class>org.jboss.gatein.jsf.html.GateInBubbleHtmlInputText</component-class>
+    </component>
+    <component>
+        <component-type>org.jboss.gatein.jsf.html.GateInHtmlInputSecret</component-type>
+        <component-class>org.jboss.gatein.jsf.html.GateInHtmlInputSecret</component-class>
+    </component>
+
+    <!-- Custom renderers -->
+    <render-kit>
+        <renderer>
+            <description>Renderer for the bubble info component</description>
+            <component-family>BIFAMILY</component-family>
+            <renderer-type>GATEIN_BUBBLE_INPUT_RENDERER</renderer-type>
+            <renderer-class>org.jboss.gatein.jsf.renderer.GateInBubbleInputRenderer</renderer-class>
+        </renderer>
+        <renderer>
+            <description>Renderer for the bubble info component</description>
+            <component-family>GTNIFAMILY</component-family>
+            <renderer-type>GATEIN_INPUT_RENDERER</renderer-type>
+            <renderer-class>org.jboss.gatein.jsf.renderer.GateInInputTextRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+    <application>
+        <view-handler>org.jboss.portletbridge.application.PortletViewHandler</view-handler>
+        <!--view-handler>com.sun.facelets.FaceletViewHandler</view-handler -->
+        <state-manager>org.jboss.portletbridge.application.PortletStateManager</state-manager>
+        <!--application-extension>
+            <excluded-attributes>
+                <excluded-attribute>org.jboss.gatein.bean.*</excluded-attribute>
+            </excluded-attributes>
+        </application-extension -->
+        <resource-bundle>
+            <base-name>messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>fr</supported-locale>
+        </locale-config>
+    </application>
+
+</faces-config>
