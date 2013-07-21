@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="gatein-portal-extension">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="gatein-portal-extension-config-3.6.0.Final-qs-10-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/gatein-portal-extension-config/gatein-portal-extension-config">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gatein-portal-extension.war" deploy-path="/" handle="module:/resource/gatein-portal-extension-war/gatein-portal-extension-war">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

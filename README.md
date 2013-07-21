@@ -23,6 +23,8 @@ về dự án xin gửi về email: khanhthinh.45a4@gmail.com
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
 Cập nhật ngày 7/7/2013: Dự án chính thức bước vào SPRINT 1. Chi tiết gửi email theo địa chỉ mhst1304@googlegroups.com
 hoặc tìm hiểu nội dung meeting trên wiki.
+
+
 ------------------------------------------------------------------------------------------------------------------------
 
 English version:

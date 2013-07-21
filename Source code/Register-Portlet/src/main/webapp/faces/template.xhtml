@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (C) 2010 Red Hat, Inc. All rights reserved
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+    @author Nabil Benothman
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich">
+
+
+    <f:view>
+
+        <div id="top">
+            <ui:insert name="top"></ui:insert>
+        </div>
+        <center>
+            <div id="content" class="center_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </center>
+
+        <!--center>
+            <div id="bottom" class="arrondi">
+                <ui:insert name="bottom">&#160;</ui:insert>
+            </div>
+        </center-->
+
+        <script type="text/javascript">
+
+            A4J.AJAX.onError = function(req, status, message) {
+                window.alert("An error occurs during request processing\n" + message);
+            }
+
+            A4J.AJAX.onExpired = function(loc, expiredMsg) {
+                if(window.confirm("The view was expired (" + expiredMsg + ") for a location: " + loc)) {
+                    return loc;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+    </f:view>
+</ui:composition>
