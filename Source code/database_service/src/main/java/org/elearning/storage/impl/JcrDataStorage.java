@@ -82,6 +82,7 @@ public class JcrDataStorage implements DataStorage{
 		Node lessonStorage = getLessonStorage();
 		Node lessonNode;
 		if(isNew){
+			//TODO: title collision
 			if(isExist(GenericLesson.NT_NAME, GenericLesson.P_TITLE, lesson.getTitle()))
 				throw new ItemExistsException();
 			try{

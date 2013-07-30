@@ -26,5 +26,10 @@
 	<classpathentry kind="lib" path="/home/tdan/GateIn-3.5.0.Final-tomcat7/lib/exo.jcr.component.core-1.15.0-GA.jar"/>
 	<classpathentry kind="lib" path="/home/tdan/GateIn-3.5.0.Final-tomcat7/lib/exo.jcr.component.ext-1.15.0-GA.jar"/>
 	<classpathentry kind="lib" path="/home/tdan/GateIn-3.5.0.Final-tomcat7/lib/exo.kernel.container-2.4.0-GA.jar"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
