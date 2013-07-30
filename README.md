@@ -11,6 +11,7 @@ thi xem tại: http://vfossa.vn/vi/mhst/2013/) và sự hỗ trợ của công t
 2. Nguyễn Đình Niên
 3. Nguyễn Mạnh Cường
 4. Tô Ngọc Linh
+5. Trần Hùng Quân
 
 Mentors: Chuyên gia java tại đội phát triển GateIn Portal công ty eXo Platform SEA.
 
@@ -19,8 +20,9 @@ Mentors: Chuyên gia java tại đội phát triển GateIn Portal công ty eXo 
 
 Dự án khởi động ngày 20/5/2013. Cập nhật trang wiki và tải mã nguồn để có thông tin chi tiết về dự án. Mọi yêu cầu
 về dự án xin gửi về email: khanhthinh.45a4@gmail.com
-Diễn đàn thảo luận các nội dung trên dự án sử dụng google groups: mhst1304@googlegroups.com
+Diễn đàn thảo luận các nội dung trên dự án sử dụng google groups: mhst1304@googlegroups.com | https://groups.google.com/forum/#!forum/mhst1304
 Quản lí dự án sử dụng redmine: http://www.hostedredmine.com/projects/mhst1304
+Report issue tại: https://www.hostedredmine.com/projects/mhst1304/issues
 
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
 Cập nhật ngày 7/7/2013: Dự án chính thức bước vào SPRINT 1. Chi tiết gửi email theo địa chỉ mhst1304@googlegroups.com
@@ -49,8 +51,9 @@ Mentors: Seniors Java Developers at GateIn Portal team, eXo Platform SEA
 Projects started from 20/5/2013. Update wiki and download source code for detail information of projects. Any request
 free to contact email: khanhthinh.45a4@gmail.com
 
-Use Google groups as discusion forums: mhst1304@googlegroups.com
+Use Google groups as discusion forums: mhst1304@googlegroups.com |  https://groups.google.com/forum/#!forum/mhst1304
 Use redmine for project management: http://www.hostedredmine.com/projects/mhst1304
+Report issues at: Report issue tại: https://www.hostedredmine.com/projects/mhst1304/issues
 
 Updated 22/5/2013: Project in analysis and design phase.
 Updated 7/7/2013: Project in SPRINT 1, for more detail send an email to mhst1304@googlegroups.com. 
