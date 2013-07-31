@@ -47,6 +47,11 @@ import org.exoplatform.services.jcr.ext.common.SessionProvider;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 
+/**
+ * Jcr Storage class
+ * @author Trung An - trung.an18@gmail.com
+ *
+ */
 public class JcrDataStorage implements DataStorage{
 	private NodeHierarchyCreator nodeHierarchyCreator;
 	private RepositoryService repoService;
@@ -54,6 +59,11 @@ public class JcrDataStorage implements DataStorage{
 	
 	private static final Log logger = ExoLogger.getLogger("org.elearning.storage.JcrDataStorage");
 	
+	/**
+	 * Jcr storage's constructor
+	 * @param nodeHierarchyCreator NodeHierarchyCreator object
+	 * @param repoService RepositoryService object
+	 */
 	public JcrDataStorage(NodeHierarchyCreator nodeHierarchyCreator, 
 								RepositoryService repoService){
 		this.nodeHierarchyCreator = nodeHierarchyCreator;
@@ -63,6 +73,12 @@ public class JcrDataStorage implements DataStorage{
 				container.getComponentInstanceOfType(SessionProviderService.class);
 	}
 	
+	/**
+	 * Get the root of the application's repository
+	 * @return root node of the storage repository
+	 * @throws RepositoryException
+	 * @throws Exception
+	 */
 	public Node getStorageHome() throws RepositoryException, Exception {
 		SessionProvider sProvider = createSessionProvider();
 		Node pubApp = nodeHierarchyCreator.getPublicApplicationNode(sProvider);
@@ -77,6 +93,13 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 
+	/**
+	 * Save lesson to repository
+	 * @param lesson lesson that need to be stored
+	 * @param isNew indicate if the lesson is new or already exist
+	 * @throws ItemExistsException
+	 * @throws Exception
+	 */
 	public void saveLesson(GenericLesson lesson, boolean isNew)
 			throws ItemExistsException, Exception {
 		Node lessonStorage = getLessonStorage();
@@ -105,6 +128,11 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 
+	/**
+	 * Get all lessons in repository
+	 * @return All lessons in repository
+	 * @throws Exception
+	 */
 	public Collection<GenericLesson> getLessons() throws Exception {
 		try{
 			Node lessonStorage = getLessonStorage();
@@ -125,6 +153,12 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 
+	/**
+	 * Get a specific lesson by id
+	 * @param id lesson's id
+	 * @return lesson contained the given id
+	 * @throws ItemNotFoundException
+	 */
 	public GenericLesson getLesson(String id) throws ItemNotFoundException {
 		try {
 			Node lessonStorage = getLessonStorage();
@@ -138,6 +172,11 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 
+	/**
+	 * Remove a specific lesson
+	 * @param id lesson's id
+	 * @throws Exception
+	 */
 	public void removeLesson(String id) throws Exception {
 		try{
 			Node lessonStorage = getLessonStorage();
@@ -150,6 +189,13 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 	
+	/**
+	 * Save document to repository
+	 * @param doc document to be stored
+	 * @param isNew indicate if creating a new document or modifying an existing one
+	 * @throws ItemExistsException
+	 * @throws Exception
+	 */
 	public void saveDocument(Document doc, boolean isNew) 
 			throws ItemExistsException, Exception{
 		Node docStorage = getDocumentStorage();
@@ -176,6 +222,12 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 	
+	/**
+	 * Get all documents that belong to a particular lesson
+	 * @param lesson 
+	 * @return a collection of documents in the lesson 
+	 * @throws Exception
+	 */
 	public Collection<Document> getDocuments(GenericLesson lesson) 
 			throws Exception{
 		Collection<Document> coll = new ArrayList<Document>();
@@ -192,6 +244,12 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 	
+	/**
+	 * Get a document by id
+	 * @param id document's id
+	 * @return document with existing id
+	 * @throws ItemNotFoundException
+	 */
 	public Document getDocument(String id) throws ItemNotFoundException{
 		try {
 			Node docStorage = getDocumentStorage();
@@ -205,6 +263,11 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 	
+	/**
+	 * Remove a document by id
+	 * @param id document's id
+	 * @throws Exception
+	 */
 	public void removeDocument(String id) throws Exception{
 		try{
 			Node docStorage = getDocumentStorage();
@@ -218,6 +281,10 @@ public class JcrDataStorage implements DataStorage{
 	}
 	
 	/******** Private supporting methods ********/
+	/**
+	 * Create a Jcr session provider
+	 * @return Jcr session provider
+	 */
 	private SessionProvider createSessionProvider() {
 		SessionProvider provider = 
 				sessionProviderService.getSessionProvider(null);
@@ -227,23 +294,9 @@ public class JcrDataStorage implements DataStorage{
 		return provider;
 	}
 	
-	private Node setLessonProperty(GenericLesson lesson, Node node){
-		try{
-			node.setProperty(GenericLesson.P_TITLE, lesson.getTitle());
-			node.setProperty(GenericLesson.P_SUBJECT, lesson.getSubject());
-			node.setProperty(GenericLesson.P_CONTENT, lesson.getContent());
-			node.setProperty(GenericLesson.P_DOCS, lesson.getDocuments().toArray(new String[]{}));
-		}
-		catch(Exception e){
-			logger.info(e.getMessage());
-			return null;
-		}
-		return node;
-	}
-	
 	/**
-	 * 
-	 * @return
+	 * Get the head of the lessons repository
+	 * @return root node of lessons repository 
 	 * @throws RepositoryException
 	 * @throws Exception
 	 */
@@ -260,9 +313,29 @@ public class JcrDataStorage implements DataStorage{
 	}
 	
 	/**
-	 * 
-	 * @param lessonNode
-	 * @return
+	 * Assign lesson's properties to a node
+	 * @param lesson lesson's properties
+	 * @param node save node
+	 * @return node with lesson's properties
+	 */
+	private Node setLessonProperty(GenericLesson lesson, Node node){
+		try{
+			node.setProperty(GenericLesson.P_TITLE, lesson.getTitle());
+			node.setProperty(GenericLesson.P_SUBJECT, lesson.getSubject());
+			node.setProperty(GenericLesson.P_CONTENT, lesson.getContent());
+			node.setProperty(GenericLesson.P_DOCS, lesson.getDocuments().toArray(new String[]{}));
+		}
+		catch(Exception e){
+			logger.info(e.getMessage());
+			return null;
+		}
+		return node;
+	}
+	
+	/**
+	 * Get lesson's properties from a node
+	 * @param lessonNode lesson node
+	 * @return a lesson with properties from the node
 	 */
 	private GenericLesson getLessonProperty(Node lessonNode){
 		GenericLesson lesson = new GenericLesson();
@@ -290,18 +363,12 @@ public class JcrDataStorage implements DataStorage{
 		return lesson;
 	}
 	
-	private Node setDocumentProperty(Document doc, Node node){
-		try{
-			node.setProperty(Document.P_LESSON_ID, doc.getLessonID());
-			node.setProperty(Document.P_FILE_PATH, doc.getFilePath());
-		}
-		catch(Exception e){
-			logger.info(e.getMessage());
-			return null;
-		}
-		return node;
-	}
-	
+	/**
+	 * Get the head of the documents repository
+	 * @return root node of documents repository 
+	 * @throws RepositoryException
+	 * @throws Exception
+	 */
 	private Node getDocumentStorage() throws RepositoryException, Exception{
 		Node appStorage = getStorageHome();
 		try{
@@ -314,12 +381,38 @@ public class JcrDataStorage implements DataStorage{
 		}
 	}
 	
+	/**
+	 * Assign document's properties to a node
+	 * @param doc document's properties
+	 * @param node save node
+	 * @return node with the document's properties
+	 */
+	private Node setDocumentProperty(Document doc, Node node){
+		try{
+			node.setProperty(Document.P_LESSON_ID, doc.getLessonId());
+			node.setProperty(Document.P_DOC_NAME, doc.getName());
+			node.setProperty(Document.P_FILE_PATH, doc.getFilePath());
+		}
+		catch(Exception e){
+			logger.info(e.getMessage());
+			return null;
+		}
+		return node;
+	}
+	
+	/**
+	 * Get document's properties from a node
+	 * @param docNode lesson node
+	 * @return a document with properties from the node
+	 */
 	private Document getDocumentProperty(Node docNode){
 		Document doc = new Document();
 		try{
 			doc.setId(docNode.getName());
 			if(docNode.hasProperty(Document.P_LESSON_ID))
-				doc.setLessonID(docNode.getProperty(Document.P_LESSON_ID).toString());
+				doc.setLessonId(docNode.getProperty(Document.P_LESSON_ID).toString());
+			if(docNode.hasProperty(Document.P_DOC_NAME))
+				doc.setName(docNode.getProperty(Document.P_DOC_NAME).toString());
 			if(docNode.hasProperty(Document.P_FILE_PATH))
 				doc.setFilePath(docNode.getProperty(Document.P_FILE_PATH).toString());
 			return doc;
@@ -332,11 +425,11 @@ public class JcrDataStorage implements DataStorage{
 	}
 	
 	/**
-	 * 
-	 * @param nodeTypeName
-	 * @param propertyName
-	 * @param value
-	 * @return
+	 * Check if a property with a particular value exists in repository
+	 * @param nodeTypeName type of the node
+	 * @param propertyName name of the property
+	 * @param value search value
+	 * @return true if the property exists, false otherwise
 	 */
 	private boolean isExist(String nodeTypeName, String propertyName, String value){
 		try {

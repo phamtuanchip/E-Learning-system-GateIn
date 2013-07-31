@@ -34,11 +34,15 @@
 		</supertypes>
 		<propertyDefinitions>
 			<propertyDefinition name="elearning:lessonid" requiredType="String" autocreated="false"
-					mandatory="true" onParentVersion="COPY" protected="fasel" multiple="false">
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:doc_name" requiredType="String" autocreated="false"
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraits/>
 			</propertyDefinition>
 			<propertyDefinition name="elearning:filepath" requiredType="String" autocreated="false"
-					mandatory="true" onParentVersion="COPY" protected="fasel" multiple="false">
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraits/>
 			</propertyDefinition>
 		</propertyDefinitions>
