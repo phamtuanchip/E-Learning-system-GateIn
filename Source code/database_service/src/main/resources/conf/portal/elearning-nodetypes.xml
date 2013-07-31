@@ -1,0 +1,51 @@
+<nodeTypes xmlns:nt="ht exo://www.jcp.org/jcr/nt/1.0"
+		xmlns:mix="ht exo://www.jcp.org/jcr/mix/1.0"
+		xmlns:jcr="ht exo://www.jcp.org/jcr/1.0">
+		
+	<nodeType name="elearning:lesson" isMixin="false" hasOrderableChildNodes="false">
+		<supertypes>
+			<supertype>nt:base</supertype>
+			<supertype>mix:referenceable</supertype>
+		</supertypes>
+		<propertyDefinitions>
+			<propertyDefinition name="elearning:title" requiredType="String" autocreated="false" 
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:subject" requiredType="String" autocreated="false" 
+					mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:content" requiredType="String" autocreated="false" 
+					mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:documentsID" requiredType="binary" autocreated="false" 
+					mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+		</propertyDefinitions>
+	</nodeType>
+	
+	<nodeType name="elearning:document" isMixin="false" hasOrderableChildNodes="false">
+		<supertypes>
+			<supertype>nt:base</supertype>
+			<supertype>mix:referenceable</supertype>
+		</supertypes>
+		<propertyDefinitions>
+			<propertyDefinition name="elearning:lessonid" requiredType="String" autocreated="false"
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:doc_name" requiredType="String" autocreated="false"
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+			<propertyDefinition name="elearning:filepath" requiredType="String" autocreated="false"
+					mandatory="true" onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraits/>
+			</propertyDefinition>
+		</propertyDefinitions>
+	</nodeType>
+	
+</nodeTypes>

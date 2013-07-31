@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"
+  xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
+  
+  <!-- Elearning configuration -->
+  <component>
+    <key>org.elearning.storage.DataStorage</key>
+    <type>org.elearning.storage.impl.JcrDataStorage</type>
+  </component>
+  
+  <!-- JCR services -->
+  <component>
+  	<key>org.exoplatform.services.jcr.RepositoryService</key>
+  	<type>org.exoplatform.services.jcr.impl.RepositoryServiceImpl</type>
+  </component>
+  
+  <component>
+  	<key>org.exoplatform.services.jcr.config.RepositoryServiceConfiguration</key>
+  	<type>org.exoplatform.services.jcr.impl.config.RepositoryServiceConfigurationImpl</type>
+  	<init-params>
+  		<value-param>
+  			<name>conf-path</name>
+  			<description>JCR Configuration File</description>
+  			<value>jar:/conf/portal/repository-configuration.xml</value>
+  		</value-param>
+  		
+  		<properties-param>
+  			<name>working-conf</name>
+  				<property name="dialect" value="auto" />
+  				<property name="source-name" value="jdbcjcr"/>
+  				<property name="persister-class-name" 
+  					value="org.exoplatform.services.jcr.impl.config.JDBCConfigurationPersister"/>
+  		</properties-param>
+  	</init-params>
+  </component>
+  
+  <external-component-plugins>
+  	<target-component>org.exoplatform.services.jcr.</target-component>
+  	<component-plugin>
+        <name>add.ks.nodeType</name>
+        <set-method>addPlugin</set-method>
+        <type>org.exoplatform.services.jcr.impl.AddNodeTypePlugin</type>
+        <init-params>
+          <values-param>
+            <name>autoCreatedInNewRepository</name>
+            <description>Node types configuration file</description>
+            <value>jar:/conf/portal/elearning-nodetypes.xml</value>
+          </values-param>
+        </init-params>
+      </component-plugin>
+  </external-component-plugins>
+  
+ </configuration>
