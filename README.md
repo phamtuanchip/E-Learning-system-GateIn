@@ -19,11 +19,16 @@ Mentors: Chuyên gia java tại đội phát triển GateIn Portal công ty eXo 
 2. Nguyễn Đức Khôi
 
 Dự án khởi động ngày 20/5/2013. Cập nhật trang wiki và tải mã nguồn để có thông tin chi tiết về dự án.
+
 Email dự án: mhst1304@googlegroups.com
+
 Diễn đàn thảo luận các nội dung liên quan tới dự án:  https://groups.google.com/forum/#!forum/mhst1304
+
 Quản lí dự án sử dụng redmine: http://www.hostedredmine.com/projects/mhst1304
-Report issue tại: https://www.hostedredmine.com/projects/mhst1304/issuesới
-IRC: channel #mhst1304 server webchat.freenode.net
+
+Report issue tại: https://www.hostedredmine.com/projects/mhst1304/issues
+
+IRC: channel #mhst1304 server webchat.freenode.net (tham khảo https://github.com/thinhnk55/E-Learning-system-GateIn/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A0i-%C4%91%E1%BA%B7t-IRC)
 
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
 
