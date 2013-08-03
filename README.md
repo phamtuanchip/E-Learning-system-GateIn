@@ -26,9 +26,12 @@ Report issue tại: https://www.hostedredmine.com/projects/mhst1304/issuesới
 IRC: channel #mhst1304 server webchat.freenode.net
 
 Cập nhật ngày 22/5/52013: Dự án đang trong giai đoạn phân tích và thiết kế
-Cập nhật ngày 7/7/2013: Dự án chính thức bước vào SPRINT 1. Chi tiết gửi email theo địa chỉ mhst1304@googlegroups.com
-hoặc tìm hiểu nội dung meeting trên wiki.
-Cập nhật 29/7/2013: Dự án chính thức bước vào SPRINT 2.
+
+Cập nhật ngày 7/7/2013: Dự án chính thức bước vào SPRINT 1
+
+Cập nhật 29/7/2013: Dự án chính thức bước vào SPRINT 2
+
+(tham khảo về các SPRINT: https://github.com/thinhnk55/E-Learning-system-GateIn/wiki/C%C3%A1c-Sprint-tri%E1%BB%83n-khai-trong-d%E1%BB%B1-%C3%A1n)
 
 
 
