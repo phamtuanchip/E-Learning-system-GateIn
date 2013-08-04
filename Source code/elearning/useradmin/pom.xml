@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/maven-v4_0_0.xsd">
+    
+  
+    <parent>
+        <groupId> org.elearning </groupId>
+        <artifactId> elearning </artifactId>
+        <version> 1.0.0-SNAPSHOT </version>   
+    </parent>
+    
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>useradmin</artifactId>
+    <packaging>war</packaging>
+    <name> Elearning UserAdmin </name>
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.gatein.portal</groupId>
+            <artifactId>exo.portal.webui.portal</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.gatein.portal</groupId>
+            <artifactId>exo.portal.webui.eXo</artifactId>		
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.gatein.portal</groupId>
+            <artifactId>exo.portal.webui.core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <!-- defines name of package -->
+    <build>
+        <finalName> useradmin </finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
