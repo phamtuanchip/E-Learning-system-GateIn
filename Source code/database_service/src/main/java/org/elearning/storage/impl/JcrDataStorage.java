@@ -24,7 +24,7 @@ package org.elearning.storage.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.elearning.storage.impl.Util;
+import org.elearning.Util;
 
 import javax.jcr.ItemExistsException;
 import javax.jcr.ItemNotFoundException;
@@ -224,12 +224,25 @@ public class JcrDataStorage implements DataStorage{
 	
 	/**
 	 * Get all documents that belong to a particular lesson
-	 * @param lesson 
+	 * @param lessonID id of the lesson
 	 * @return a collection of documents in the lesson 
 	 * @throws Exception
 	 */
-	public Collection<Document> getDocuments(GenericLesson lesson) 
+	public Collection<Document> getDocuments(String lessonID) 
 			throws Exception{
+		// Get the lesson
+		Node lessonStorage = getLessonStorage();
+		GenericLesson lesson;
+		try{
+			lesson = getLessonProperty(lessonStorage.getNode(lessonID));
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			logger.info(e.getMessage());
+			return null;
+		}
+		
+		// Get all documents belong to the lesson
 		Collection<Document> coll = new ArrayList<Document>();
 		Node docStorage = getDocumentStorage();
 		try{

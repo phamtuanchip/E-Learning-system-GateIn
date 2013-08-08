@@ -89,11 +89,11 @@ public interface DataStorage {
 	
 	/**
 	 * Get all documents that belong to a particular lesson
-	 * @param lesson 
+	 * @param lessonID id of the lesson 
 	 * @return a collection of documents in the lesson 
 	 * @throws Exception
 	 */
-	public Collection<Document> getDocuments(GenericLesson lesson) throws Exception;
+	public Collection<Document> getDocuments(String lessonID) throws Exception;
 	
 	/**
 	 * Get a document by id
