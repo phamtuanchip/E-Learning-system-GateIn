@@ -19,7 +19,7 @@
  * Boston, MA  02110-1301, USA.
  * 
 **************************************************************************************/
-package org.elearning.storage.impl;
+package org.elearning;
 
 public class Util {
 	public static final String ATTACHMENT_NODE = "attachment";
